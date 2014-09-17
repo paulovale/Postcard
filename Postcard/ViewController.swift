@@ -11,11 +11,9 @@ import UIKit
 class ViewController: UIViewController {
                             
     @IBOutlet var messageLabel : UILabel
-    
+    @IBOutlet var nameLabel : UILabel
     @IBOutlet var enterNameTextField : UITextField
-    
     @IBOutlet var enterMessageTextField : UITextField
-    
     @IBOutlet var mailButton : UIButton
     
     override func viewDidLoad() {
@@ -37,6 +35,14 @@ class ViewController: UIViewController {
         enterMessageTextField.resignFirstResponder()
         messageLabel.textColor = UIColor.redColor()
         mailButton.setTitle("Mail sent", forState: UIControlState.Normal)
+        
+        // name label / challenge 1
+        nameLabel.hidden = false
+        nameLabel.text = enterNameTextField.text
+        enterNameTextField.text = ""
+        enterNameTextField.resignFirstResponder()
+        nameLabel.textColor = UIColor.blueColor()
+
     }
 
 }
